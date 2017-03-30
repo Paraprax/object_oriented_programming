@@ -1,5 +1,5 @@
 class Paperboy
-  def initialze(name, papers_delivered, earnings)
+  def initialize(name)
     @name = name
     @papers_delivered = 0
     @earnings = 0
@@ -10,7 +10,7 @@ class Paperboy
   attr_reader :earnings
 
   def deliver(start_address, end_address)
-     route = @end_address -= @start_address
+     route = end_address - start_address + 1
      @earnings += route*0.25
      @papers_delivered = route
   end
@@ -21,7 +21,7 @@ class Paperboy
   end
 
   def report
-    puts "My name is #{name}, I've delivered #{papers_delivered} and made #{earnings} from it!"
+    puts "My name is #{name}, I've delivered #{papers_delivered} and made #{earnings} dollars from it!"
   end
 
 end
